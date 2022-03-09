@@ -6,9 +6,9 @@
         v-for="item in listOfData"
         :key="item.id"
         :id="item.id"
-        :class="!(item.id % 2) ? 'container' : 'container2'"
+        :class="!(item.id % 2) ? 'container' : 'reverse-container'"
       >
-        <div :class="!(item.id % 2) ? 'had2' : 'had'">
+        <div :class="!(item.id % 2) ? 'text-wrapper-even' : 'text-wrapper-odd'">
           <p :class="!(item.id % 2) ? 'section-id-even' : 'section-id-odd'">
             {{ "0" + item.id }}
           </p>
@@ -38,6 +38,7 @@
     </div>
   </section>
 </template>
+
 
 <script>
 import dataArr from "../assets/data.json";
@@ -69,7 +70,7 @@ export default {
   align-items: center;
   justify-content: space-between;
 }
-.container2 {
+.reverse-container {
   margin-bottom: 12rem;
   position: relative;
   display: flex;
@@ -80,7 +81,7 @@ export default {
   z-index: 2;
 }
 @media screen and (max-width: 767px) {
-  .container2 {
+  .reverse-container {
     margin-bottom: 12rem;
     position: relative;
     display: flex;
@@ -142,7 +143,7 @@ export default {
     top: 49px;
   }
 }
-@media screen and (min-width: 1440px) {
+@media screen and (max-width: 1440px) {
   .section-id-odd {
     font-family: Roboto;
     font-style: normal;
@@ -152,8 +153,8 @@ export default {
     color: #ffffff;
     opacity: 0.1;
     position: absolute;
-    left: -144px;
-    top: -21px;
+    left: -144px !important;
+    top: -21px !important;
   }
   .section-id-even {
     font-family: Roboto;
@@ -184,7 +185,7 @@ export default {
   height: 720px;
   width: 38.71%;
 }
-.had {
+.text-wrapper-odd {
   display: flex;
   flex-direction: column;
   /* padding: 5px;
@@ -202,7 +203,7 @@ export default {
   background: linear-gradient(180deg, rgba(11, 29, 38, 0) 0%, #0b1d26 61.38%);
 }
 
-.had2 {
+.text-wrapper-even {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -261,5 +262,6 @@ export default {
   justify-content: space-between;
   width: 127px;
   height: 21px;
+  cursor: pointer;
 }
 </style>

@@ -5,9 +5,13 @@
         <HeaderSection />
         <ContentSection />
       </div>
-      <img src="../assets/HG.png" alt="" class="img1" />
-      <img src="../assets/MG.png" alt="" class="img2" />
-      <img src="../assets/VG.png" alt="" class="img3" />
+       <img
+        v-for="image in arrayOfImages"
+        :src="image.src"
+        :alt="image.alt"
+        :class="image.class"
+        :key="image.id"
+      />
     </div>
     <div class="divider"></div>
   </section>
@@ -19,6 +23,30 @@ import ContentSection from "./Content.vue";
 
 export default {
   name: "ImageContainer",
+   data() {
+    return {
+      arrayOfImages: [
+        {
+          src: require("../assets/HG.png"),
+          id: 1,
+          alt: "HG",
+          class: "HG",
+        },
+        {
+          src: require("../assets/MG.png"),
+          id: 2,
+          alt: "MG",
+          class: "MG",
+        },
+        {
+          src: require("../assets/VG.png"),
+          id: 3,
+          alt: "VG",
+          class: "VG",
+        },
+      ],
+    };
+  },
   components: {
     HeaderSection,
     ContentSection,
@@ -48,21 +76,21 @@ export default {
   padding: 3.6rem 5rem;
   box-sizing: border-box;
 }
-.img1 {
+.HG {
   width: 100%;
   position: absolute;
   height: 1513px;
   left: 0px;
   top: -200px;
 }
-.img2 {
+.MG {
   position: absolute;
   width: 100%;
   height: 1422px;
   left: 0px;
   top: 464px;
 }
-.img3 {
+.VG {
   position: absolute;
   width: 100%;
   height: 926px;
