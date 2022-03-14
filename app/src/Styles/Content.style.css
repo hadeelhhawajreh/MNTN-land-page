@@ -1,0 +1,90 @@
+.slider-indicator {
+    height: 240px;
+    width: 73px;
+    border-radius: 0px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 3;
+}
+
+.content-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 198px;
+    width: 100%;
+}
+
+@media screen and (min-width: 1920px) {
+    .content-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 183px;
+        width: 100%;
+    }
+}
+
+.span {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 21px;
+    color: #ffffff;
+}
+
+.span-text-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 127px;
+    height: 21px;
+}
+
+.arrowDown {
+    transform: rotate(90deg);
+}
+
+.slider {
+    width: 3px;
+    height: 240px;
+    left: 1837px;
+    top: 326px;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.indicator-name {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    width: 40px;
+    height: 204px;
+    justify-content: space-around;
+}
+
+a {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 21px;
+    /* identical to box height */
+    text-align: right;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.indicator {
+    position: absolute;
+    width: 3px;
+    height: 60px;
+    background: #ffffff;
+}
